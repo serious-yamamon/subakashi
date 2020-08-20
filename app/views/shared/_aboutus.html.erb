@@ -1,0 +1,54 @@
+<div class="sub-wrapper">
+  <div class="container-fluid sub-container">
+    <div class="row sub">
+      <div class="col-md-12 col-xs-12 profile">
+        <h2 class="profile-title">スバ賢編集部</h2>
+          <div class="profile-info--official">
+            <%= link_to "https://twitter.com/subakashi_media", {class: "profile-info--sns icon-sns icon-twitter", target: "_blank"} do %>
+              <%= icon("fab", "twitter fa-2x") %>
+              <% end %>
+              <%= link_to "https://www.youtube.com/channel/UC1nhXEpwEf51J31vDBg6g-Q?view_as=subscriber", {class: "profile-info--sns icon-sns icon-youtube", target: "_blank"} do %>
+              <%= icon("fab", "youtube fa-2x") %>
+              <% end %>
+            </div>
+
+
+
+        <% @writers.each do |writer| %>
+        <div class="col-md-12 col-sm-12 col-xs-12 profile-wrapper">
+          <div class="col-md-5 col-sm-5 col-xs-5 profile-image">
+            <%= image_tag "/assets/prof_#{writer.id}.jpg", class: "profile-image--item" %>
+          </div>
+          <div class="col-md-7 col-sm-7 col-xs-7 profile-info">
+            <p class="profile-info--name"><%= writer.name %></p>
+            <div class="profile-info--link">
+              <% if writer.twitter? %>
+              <%= link_to "#{writer.twitter}", {class: "profile-info--sns icon-sns icon-twitter", target: "_blank"} do %>
+                <%= icon("fab", "twitter fa-lg") %>
+              <% end %>
+              <% end %>
+              <% if writer.instagram? %>
+              <%= link_to "#{writer.instagram}", {class: "profile-info--sns icon-sns icon-instagram", target: "_blank"} do %>
+              <%= icon("fab", "instagram fa-lg") %>
+              <% end %>
+              <% end %>
+              <% if writer.youtube? %>
+              <%= link_to "#{writer.youtube}", {class: "profile-info--sns icon-sns icon-youtube", target: "_blank"} do %>
+                <%= icon("fab", "youtube fa-lg") %>
+              <% end %>
+              <% end %>
+            </div>
+            <div class="profile-info--description">
+              <p><%= writer.about %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <div class="profile-info--detail">
+          <%= link_to "もっと詳しく", about_index_path, class: "btn btn-outline-default btn-round" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
