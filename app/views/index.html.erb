@@ -1,0 +1,92 @@
+<header>
+  <%= render 'shared/navbar' %>
+</header>
+
+<div class="aboutus-wrapper">
+  <div class="aboutus-container">
+    <div class="aboutus-logo--img">
+      <img class="aboutus-logo--img" src="/assets/logo.png" alt="ロゴ">
+    </div>
+    <div class="aboutus-catchcopy">
+      <p>あなたの世界を少し広げるウェブメディア</p>
+    </div>
+    <div class="aboutus-section">
+        <div class="aboutus-section--headline">
+          <p>スバ賢とは</p>
+        </div>
+        <div class="aboutus-section--concept">
+          <p>知識と知恵のおすそわけ</p>
+        </div>
+        <div class="aboutus-section--sentence">
+          <p>勉強は嫌われすぎているし，</p>
+          <p>特別扱いされすぎているような気がします．</p>
+          <p>しかし，勉強とはそんなに大層なものではなく，</p>
+          <p>誰もが楽しめるものだと思うのです．</p>
+          <p>ひとりでも多くの人に勉強の楽しさを知ってもらい，</p>
+          <p>さらなる知的好奇心のきっかけを掴んでもらうために</p>
+          <p>東大生塾講師たちが本気を出します．</p>
+        </div>
+    </div>
+    <div class="aboutus-section">
+        <div class="aboutus-section--headline">
+          <p>スバ賢でできること</p>
+        </div>
+        <div class="aboutus-section--concept">
+          <p>明日は今日より少し賢く</p>
+        </div>
+        <div class="aboutus-section--sentence">
+          <p>スバ賢では受験から教養まで幅広い内容を，</p>
+          <p>記事や映像を通じて勉強することができます．</p>
+          <p>のんびり眺めるだけでもいい．</p>
+          <p>一気に知識を詰め込むのも時には大切でしょう．</p>
+          <p>わからない単元だけつまみ食いするのも</p>
+          <p>上手な使い方だと思います．</p>
+          <p>どうぞご自由に，好きなだけ賢くなってください．</p>
+        </div>
+    </div>
+    <div class="aboutus-section">
+      <div class="aboutus-section--headline">
+        <p>ライター/講師紹介</p>
+      </div>
+      <div class="aboutus-section--concept">
+        <p>知りたいし，教えたい</p>
+      </div>
+      <div class="aboutus-section--profile">
+        <% @writers.each do |writer| %>
+          <div class="aboutus-profile">
+            <div class="aboutus-profile--status">
+              <p><%= writer.status %></p>
+            </div>
+            <div class="aboutus-profile--image">
+              <%= image_tag "/assets/prof_#{writer.id}.jpg", class: "aboutus-profile--image---item" %>
+            </div>
+            <p class="aboutus-profile--name"><%= writer.name %></p>
+            <div class="aboutus-profile--link">
+              <% if writer.twitter? %>
+              <%= link_to "#{writer.twitter}", {class: "profile-info--sns icon-sns icon-twitter", target: "_blank"} do %>
+                <%= icon("fab", "twitter fa-lg") %>
+              <% end %>
+              <% end %>
+              <% if writer.instagram? %>
+              <%= link_to "#{writer.instagram}", {class: "profile-info--sns icon-sns icon-instagram", target: "_blank"} do %>
+              <%= icon("fab", "instagram fa-lg") %>
+              <% end %>
+              <% end %>
+              <% if writer.youtube? %>
+              <%= link_to "#{writer.youtube}", {class: "profile-info--sns icon-sns icon-youtube", target: "_blank"} do %>
+                <%= icon("fab", "youtube fa-lg") %>
+              <% end %>
+              <% end %>
+            </div>
+            <div class="aboutus-profile--description">
+              <p><%= writer.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= render 'shared/footer' %>
