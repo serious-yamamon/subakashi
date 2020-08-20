@@ -15,6 +15,4 @@
 //= require rails-ujs
 //= require activestorage
 //= require bootstrap-sprockets
-//= require inline-attachment
-//= require jquery.inline-attachment
 //= require_tree .
