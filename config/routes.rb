@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'home#index'
-    resources :posts, only: %i[new create edit update destroy] do
+    resources :posts, only: %i[new show create edit update destroy] do
       get :all, :published, :drafts, on: :collection
     end
     resources :categories, only: %i[index show create edit update destroy]

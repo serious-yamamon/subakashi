@@ -33,6 +33,38 @@
           <div class="post-text">
             <%= md_to_html(@post.text) %>
           </div>
+          <div class="writer-info">
+            <div class="writer-info--comment">
+              <%= @post.comment%>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5 profile-image">
+              <%= image_tag "/assets/prof_#{@post.writer.id}.jpg", class: "profile-image--item" %>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-7 profile-info">
+              <p class="profile-info--name"><%= @post.writer.name %></p>
+              <div class="profile-info--link">
+                <% if @post.writer.twitter? %>
+                <%= link_to "#{@post.writer.twitter}", {class: "profile-info--sns icon-sns icon-twitter", target: "_blank"} do %>
+                  <%= icon("fab", "twitter fa-lg") %>
+                <% end %>
+                <% end %>
+                <% if @post.writer.instagram? %>
+                <%= link_to "#{@post.writer.instagram}", {class: "profile-info--sns icon-sns icon-instagram", target: "_blank"} do %>
+                <%= icon("fab", "instagram fa-lg") %>
+                <% end %>
+                <% end %>
+                <% if @post.writer.youtube? %>
+                <%= link_to "#{@post.writer.youtube}", {class: "profile-info--sns icon-sns icon-youtube", target: "_blank"} do %>
+                  <%= icon("fab", "youtube fa-lg") %>
+                <% end %>
+                <% end %>
+              </div>
+              <div class="profile-info--description">
+                <p><%= @post.writer.about %></p>
+              </div>
+            </div>
+
+          </div>
           <div class="post-sns">
             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
@@ -48,47 +80,14 @@
             <span><%= previous_post(@post.previous) %> &rsaquo;</span>
           </div>
         </div>
-        <div class="writer-info">
-          <div class="writer-info--comment">
-            <%= @post.comment %>
-          </div>
-          <div class="col-md-5 col-sm-5 col-xs-5 profile-image">
-            <%= image_tag "/assets/prof_#{@post.writer.id}.jpg", class: "profile-image--item" %>
-          </div>
-          <div class="col-md-7 col-sm-7 col-xs-7 profile-info">
-            <p class="profile-info--name"><%= @post.writer.name %></p>
-            <div class="profile-info--link">
-              <% if @post.writer.twitter? %>
-              <%= link_to "#{@post.writer.twitter}", {class: "profile-info--sns icon-sns icon-twitter", target: "_blank"} do %>
-                <%= icon("fab", "twitter fa-lg") %>
-              <% end %>
-              <% end %>
-              <% if @post.writer.instagram? %>
-              <%= link_to "#{@post.writer.instagram}", {class: "profile-info--sns icon-sns icon-instagram", target: "_blank"} do %>
-              <%= icon("fab", "instagram fa-lg") %>
-              <% end %>
-              <% end %>
-              <% if @post.writer.youtube? %>
-              <%= link_to "#{@post.writer.youtube}", {class: "profile-info--sns icon-sns icon-youtube", target: "_blank"} do %>
-                <%= icon("fab", "youtube fa-lg") %>
-              <% end %>
-              <% end %>
-            </div>
-            <div class="profile-info--description">
-              <p><%= @post.writer.about %></p>
-            </div>
-          </div>
-        </div>
         <div class="row similar-posts">
           <h4 class="similar-posts--title">関連記事</h4>
-          <%= render partial: 'similar_post', collection: @similar_posts, as: :similar_post %>
         </div>
       </div>
       <div class="col-md-3 col-lg-3 sticky bottom-xs">
         <div class="side-bar">
           <div class="side-bar--posts">
             <h2 class="side-title">人気記事</h2>
-            <%= render partial: 'popular_post', collection: @popular_posts, as: :popular_post%>
           </div>
         </div>
       </div>

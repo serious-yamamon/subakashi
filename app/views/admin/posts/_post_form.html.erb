@@ -76,8 +76,11 @@
             <% writer_options = Writer.order(:id).map { |w| [w.name, w.id] } %>
             <%= f.select :writer_id, writer_options, {prompt:"ライター"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <%= f.text_field :tag_list, value: @post.tag_list.join(','), class: "form-control", placeholder: "タグ (カンマでセパレート)", required: 'true' %>
+          </div>
+          <div class="col-md-6">
+            <%= f.text_field :comment, class: "form-control", placeholder: "ひとことコメント", required: 'true' %>
           </div>
         </div>
         <div class="row new-post-form_confirm">

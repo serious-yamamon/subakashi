@@ -13,6 +13,10 @@ class Admin::PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find_by(slug: params[:id])
+  end
+
   def edit
     @post = Post.find_by(slug: params[:id])
   end
@@ -54,6 +58,6 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :image, :published, :category_id, :tag_list, :series_id, :writer_id, :slug, :favorite, :description)
+    params.require(:post).permit(:title, :text, :image, :published, :category_id, :tag_list, :series_id, :writer_id, :slug, :favorite, :description, :comment)
   end
 end
