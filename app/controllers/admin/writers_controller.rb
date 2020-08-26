@@ -1,6 +1,6 @@
 class Admin::WritersController < ApplicationController
   def index
-    @writers = Writer.all
+    @writers = Writer.all.order(:id)
   end
 
   def edit

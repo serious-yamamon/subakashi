@@ -13,7 +13,7 @@
         <div class="post">
           <div class="post-date">
             <div class="post-date-published">
-              <%= @post.created_at.to_s(:published_on) %>
+              最終更新日：<%=  @post.updated_at.strftime('%Y/%m/%d') %>
             </div>
           </div>
           <h1 class="post-title"><%= @post.title %></h1>
