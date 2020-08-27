@@ -11,6 +11,10 @@
     <div class="row">
       <div class="col-md-9 col-lg-8 col-lg-offset-1">
         <div class="post">
+          <h1 class="post-title"><%= @post.title %></h1>
+          <div class="post-thumbnail">
+            <%= image_tag @post.image.url(:thumb), class: "post-thumbnail"%>
+          </div>
           <div class="post-date">
             <div class="post-date-published">
               記事投稿日：<%=  @post.created_at.strftime('%Y/%m/%d') %>
@@ -19,7 +23,6 @@
               最終更新日：<%=  @post.updated_at.strftime('%Y/%m/%d') %>
             </div>
           </div>
-          <h1 class="post-title"><%= @post.title %></h1>
           <div class="post-info" ontouchstart="">
             <div class="post-info--category">
               <%= icon("fas", "home") %> <%= link_to "スバ賢メディア", root_path %> / <%= link_to @post.category.name, @post.category %> / <% if @post.series.name!="単発" %> <%= link_to @post.series.name, series_path(@post.series.id) %> <% end %>
@@ -34,13 +37,14 @@
             <%= md_to_html(@post.text) %>
           </div>
           <div class="writer-info">
+            <p class="this-article">この記事を書いたのは…</p>
             <div class="writer-info--comment">
               <%= @post.comment %>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 profile-image">
+            <div class="col-md-6 col-sm-12 col-xs-12 profile-image">
               <%= image_tag "/assets/prof_#{@post.writer.id}.jpg", class: "profile-image--item" %>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 profile-info">
+            <div class="col-md-6 col-sm-12 col-xs-12 profile-info">
               <p class="profile-info--name"><%= @post.writer.name %></p>
               <div class="profile-info--link">
                 <% if @post.writer.twitter? %>
@@ -61,6 +65,9 @@
               </div>
               <div class="profile-info--description">
                 <p><%= @post.writer.description %></p>
+              </div>
+              <div class="profile-info--detail">
+                <%= link_to "もっと詳しく", about_index_path, class: "btn btn-outline-default btn-round" %>
               </div>
             </div>
           </div>
