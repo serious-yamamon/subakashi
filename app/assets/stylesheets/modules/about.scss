@@ -47,6 +47,7 @@
       p{
         font-size: 18px;
         font-family: "flopDesign";
+        margin-bottom: 5px;
       }
     }
     &--profile{
@@ -57,12 +58,14 @@
     margin: 30px 0;
     &--status{
       text-align: center;
-      width: 50%;
+      width: 70%;
+      max-width: 300px;
       margin: 0 auto;
-      border-bottom: solid 1px #20c3ff;
       p{
         font-size: 20px;
         font-family: "flopDesign";
+        padding-bottom: 10px;
+        border-bottom: solid 1px #20c3ff;
       }
     }
     &--name{
@@ -134,6 +137,7 @@
       p{
         font-size: 13px;
         font-family: "flopDesign";
+        margin-bottom: 5px;
       }
     }
     &--profile{
@@ -144,12 +148,14 @@
     margin: 30px 0;
     &--status{
       text-align: center;
-      width: 50%;
+      width: 70%;
+      max-width: 300px;
       margin: 0 auto;
-      border-bottom: solid 1px #20c3ff;
       p{
         font-size: 18px;
         font-family: "flopDesign";
+        padding-bottom: 10px;
+        border-bottom: solid 1px #20c3ff;
       }
     }
     &--name{

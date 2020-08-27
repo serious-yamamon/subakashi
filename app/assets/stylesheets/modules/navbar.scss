@@ -39,6 +39,10 @@
       height: 80px;
       font-size: 1.3em;
       cursor: pointer;
+      &:hover{
+        background-color: #e7f7fe;
+        border-bottom: solid 4px #7fd5fa;
+      }
     }
 
     .dropdown-menu {
