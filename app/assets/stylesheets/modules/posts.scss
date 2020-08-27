@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post{
+  &-thumbnail{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .writer-info{
     width: 90%;
     margin: 5px auto;
@@ -9,6 +14,11 @@
     padding: 15px;
     padding-top: 5px;
     overflow:hidden;
+    .this-article{
+      text-align: center;
+      margin-top: 10px;
+      font-family: "flopDesign";
+    }
     &--comment{
         width: 80%;
         background-color: #ffffff;
@@ -43,15 +53,22 @@
     color: #494949;/*文字色*/
     background: transparent;
     border-left: solid 5px #1da7e3;
+    font-family: "flopDesign";
     }
   h3{
     background: linear-gradient(transparent 70%, #7fd5fa 70%);
+    font-family: "flopDesign";
+  }
+  em{
+      background:linear-gradient(transparent 40%, #ff6 70%);
+      font-style: normal;
   }
   .question{
     width: 95%;
     margin: 0 auto;
     background-color: #f5f8fa;
     padding: 15px;
+
     &-title{
       width:90%;
       margin-left: auto;
@@ -76,7 +93,7 @@
   .summary{
     width: 95%;
     margin: 0 auto;
-    background-color: #e7f7fe;
+    border: double 3px #1da7e3;
     padding: 15px;
     &-title{
       width:90%;
@@ -104,6 +121,7 @@
   }
   .index{
     width: 95%;
+    border: solid 1px #e1e8ed;
     margin: 0 auto;
     background-color: #e7f7fe;
     padding: 15px;
