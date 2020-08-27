@@ -41,10 +41,10 @@
             <div class="writer-info--comment">
               <%= @post.comment %>
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 profile-image">
+            <div class="col-md-6 col-sm-6 col-xs-12 profile-image">
               <%= image_tag "/assets/prof_#{@post.writer.id}.jpg", class: "profile-image--item" %>
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 profile-info">
+            <div class="col-md-6 col-sm-6 col-xs-12 profile-info">
               <p class="profile-info--name"><%= @post.writer.name %></p>
               <div class="profile-info--link">
                 <% if @post.writer.twitter? %>
