@@ -5,13 +5,13 @@ $d(function() {
   Dropzone.autoDiscover = false;
 
   function insertImageUrl(image) {
-    var html = `<div hidden class="btn btn-primary imageurl" data-clipboard-text="$d{image.url}">Copy Link</div>`
+    var html = `<div hidden class="btn btn-primary imageurl" data-clipboard-text="${image.url}">Copy Link</div>`
     return html
   }
   //images_controller.rbのcreateアクションが呼ばれる
   $d('#my-dropzone').dropzone({
     maxFilesize: 200,// MB
-    paramName: 'image[image]',
+    paramName: 'file_name[file_name]',
     clickable: true,
     success: function(file, response) {
       // file.previewElementでpreview要素のhtmlにアクセス

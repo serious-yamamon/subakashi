@@ -1,8 +1,8 @@
 <script>
-  $(function() {
-    $("html").addClass("admin-wrap");
-    $("body").addClass("admin-wrap");
-    $(".wrap").addClass("admin-wrap");
+  $d(function() {
+    $d("html").addClass("admin-wrap");
+    $d("body").addClass("admin-wrap");
+    $d(".wrap").addClass("admin-wrap");
   })
 </script>
 <head>
@@ -29,10 +29,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
-  <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/x-mathjax-config">
+  <script async src="//cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     TeX: { equationNumbers: { autoNumber: "AMS" }},
     tex2jax: {

@@ -22,7 +22,7 @@ class Admin::ImagesController < ApplicationController
   private
 
   def image_params
-    params.permit(:image)
-    #params.require(:image).permit(:image)
+    params.permit(:file_name)
+    params.require(:file_name).permit(:file_name)
   end
 end
