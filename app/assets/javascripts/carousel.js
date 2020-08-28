@@ -1,7 +1,7 @@
-var $jq = jQuery.noConflict();
+var $c = jQuery.noConflict();
 
-$jq(document).ready(function(){
-  $jq('.post-slider').slick({
+$c(document).ready(function(){
+  $c('.post-slider').slick({
     centerMode: true,
     centerPadding: '60px',
     autoplay:true,

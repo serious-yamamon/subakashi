@@ -25,15 +25,16 @@
       });
     </script>
     <script>
-      $(function(){
+      var $s = jQuery.noConflict();
+      $s(function(){
         // #で始まるリンクをクリックしたら実行されます
-        $('a[href^="#"]').click(function() {
+        $s('a[href^="#"]').click(function() {
           // スクロールの速度
           var speed = 1000; // ミリ秒で記述
-          var href= $(this).attr("href");
-          var target = $(href == "#" || href == "" ? 'html' : href);
+          var href= $s(this).attr("href");
+          var target = $s(href == "#" || href == "" ? 'html' : href);
           var position = target.offset().top;
-          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          $s('body,html').animate({scrollTop:position}, speed, 'swing');
           return false;
         });
       });
