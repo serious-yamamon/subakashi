@@ -20,7 +20,7 @@
       font-family: "flopDesign";
     }
     &--comment{
-        width: 80%;
+        width: 95%;
         background-color: #ffffff;
         border-radius: 5px;
         padding:15px;
@@ -63,6 +63,7 @@
   em{
       background:linear-gradient(transparent 40%, #ff6 70%);
       font-style: normal;
+      font-size: 15px;
   }
   .question{
     width: 95%;
@@ -165,7 +166,7 @@
       @include clearfix();
       margin-left: 5px;
       &--category {
-        font-size: 16px;
+        font-size: 15px;
         float: left;
         color: #777;
         a {
@@ -223,7 +224,7 @@
         }
       }
       p {
-        font-size: 16px;
+        font-size: 15px;
         margin: 0 0 0.85em;
         line-height: 2.2em;
         strong {
@@ -231,7 +232,7 @@
         }
       }
       a {
-        font-size: 16px;
+        font-size: 15px;
         color: #3994ff;
         text-decoration: none;
       }
@@ -244,7 +245,7 @@
         margin-left: 3%;
         margin-bottom: 15px;
         li {
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.7em;
         }
       }
