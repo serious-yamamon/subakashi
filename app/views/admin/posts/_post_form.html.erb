@@ -83,7 +83,11 @@
             <%= f.text_field :comment, class: "form-control", placeholder: "ひとことコメント", required: 'true' %>
           </div>
           <div class="col-md-1">
-            <%= link_to admin_post_path(@post.slug),target: "_blank" do %><%= icon('far','eye') %><% end %>
+            <% if @post.slug? %>
+              <%= link_to admin_post_path(@post.slug),target: "_blank" do %><%= icon('far','eye') %><% end %>
+            <% else %>
+              <%= icon('far','eye') %>
+            <% end %>
           </div>
         </div>
         <div class="row new-post-form_confirm">
