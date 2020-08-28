@@ -79,8 +79,11 @@
           <div class="col-md-6">
             <%= f.text_field :tag_list, value: @post.tag_list.join(','), class: "form-control", placeholder: "タグ (カンマでセパレート)", required: 'true' %>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-5">
             <%= f.text_field :comment, class: "form-control", placeholder: "ひとことコメント", required: 'true' %>
+          </div>
+          <div class="col-md-1">
+            <%= link_to admin_post_path(@post.slug),target: "_blank" do %><%= icon('far','eye') %><% end %>
           </div>
         </div>
         <div class="row new-post-form_confirm">
@@ -103,11 +106,11 @@
           <div class="col-md-3 col-sm-3 new-post-form_confirm__button">
             <div class="new-post-form_confirm__button-published">
               <%= f.check_box 'published',{}, "Published", "Draft" %>
-                 Publish
+                 公開
             </div>
             <div class="new-post-form_confirm__button-favorite">
               <%= f.check_box 'favorite',{}, "true", "false" %>
-                 Favorite
+                 おすすめ記事
             </div>
             <%= f.submit :Save, class:"btn btn-primary" %>
           </div>
