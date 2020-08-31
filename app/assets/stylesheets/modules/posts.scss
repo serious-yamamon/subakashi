@@ -77,10 +77,9 @@
   }
   .question{
     width: 95%;
-    margin: 0 auto;
+    margin: 15 auto;
     background-color: #f5f8fa;
     padding: 15px;
-
     &-title{
       width:90%;
       margin-left: auto;
@@ -108,7 +107,7 @@
   }
   .summary{
     width: 95%;
-    margin: 0 auto;
+    margin: 15 auto;
     border: double 3px #1da7e3;
     padding: 15px;
     &-title{
@@ -142,7 +141,7 @@
   .index{
     width: 95%;
     border: solid 1px #e1e8ed;
-    margin: 0 auto;
+    margin: 15 auto;
     background-color: #e7f7fe;
     padding: 15px;
     h4{
