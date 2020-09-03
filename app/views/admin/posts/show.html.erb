@@ -17,9 +17,6 @@
           </div>
           <div class="post-date">
             <div class="post-date-published">
-              記事投稿日：<%=  @post.created_at.strftime('%Y/%m/%d') %>
-            </div>
-            <div class="post-date-published">
               最終更新日：<%=  @post.updated_at.strftime('%Y/%m/%d') %>
             </div>
             <%= link_to "記事を編集する", edit_admin_post_path(@post.slug) %>
