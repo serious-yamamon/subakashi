@@ -9,7 +9,7 @@ $c(document).ready(function(){
     slidesToShow: 3,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 960,
         settings: {
           arrows: false,
           centerMode: true,
@@ -23,7 +23,7 @@ $c(document).ready(function(){
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 1
+          slidesToShow: 2
         }
       }
     ]
