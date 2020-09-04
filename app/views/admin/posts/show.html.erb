@@ -26,7 +26,7 @@
           </div>
           <div class="post-info" ontouchstart="">
             <div class="post-info--category">
-              <%= icon("fas", "home") %> <%= link_to "スバ賢メディア", root_path %> / <%= link_to @post.category.name, @post.category %> / <% if @post.series.name!="単発" %> <%= link_to @post.series.name, series_path(@post.series.id) %> <% end %>
+              <%= icon("fas", "home") %> <%= link_to "スバ賢メディア", root_path %> / <%= link_to @post.category.name, @post.category %> / <% if @post.series.name!="読切" %> <%= link_to @post.series.name, series_path(@post.series.id) %> <% end %>
             </div>
             <div class="post-info--tags">
               <% @post.tags.each do |tag| %>
