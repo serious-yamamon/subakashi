@@ -23,10 +23,12 @@
         <tbody>
           <% if @series.any? %>
             <% @series.each do |series| %>
+            <tr class="post-item">
               <td><%= link_to "#{series.name}", admin_series_path(series), method: :get %></td>
               <td><%= series.description%></td>
               <td><%= link_to edit_admin_series_path(series) do %><%= icon('fas','edit')  %><% end %></td>
               <td><%= link_to admin_series_path(series), method: :delete, data: {confirm: "削除されたシリーズは復元できません．削除しますか？"} do %><%= icon('fas','times')  %><% end %></td>
+            </tr>
             <% end %>
           <% else %>
           <tr data-href="#" class="post-item">
