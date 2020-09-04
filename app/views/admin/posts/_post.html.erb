@@ -5,7 +5,6 @@
   <td class="post-data"><%= post.writer.name %></td>
   <td class="post-data"><%= post.category.name %></td>
   <td class="post-data"><%= status(post) %></td>
-  <td class="post-data"><%= post.created_at.to_s(:date) %></td>
   <td class="post-data">
     <%= link_to admin_post_path(post.slug) do %><%= icon('far','eye') %><% end %>
   </td>
