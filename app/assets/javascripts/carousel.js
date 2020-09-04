@@ -16,6 +16,14 @@ $c(document).ready(function(){
           centerPadding: '40px',
           slidesToShow: 3
         }
+      },      {
+        breakpoint: 870,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 2
+        }
       },
       {
         breakpoint: 480,
@@ -23,7 +31,7 @@ $c(document).ready(function(){
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 2
+          slidesToShow: 1
         }
       }
     ]
