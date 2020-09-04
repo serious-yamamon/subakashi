@@ -12,7 +12,7 @@
           <%= post.category.name %>
         </span>
         <span class="post-item--main_info__date">
-          <%= post.created_at.to_s(:published_on) %>
+          <%= post.time.strftime("%Y/%m/%d") %>
         </span>
       </p>
     </div>

@@ -5,6 +5,9 @@ class Post < ApplicationRecord
 
   has_one :popular_post, dependent: :destroy
 
+  before_create :time_create
+  before_update :time_update
+
   acts_as_taggable
 
   validates :title, presence: true
@@ -31,6 +34,22 @@ class Post < ApplicationRecord
 
   def next
     Post.published.default_order.where('created_at > ?', created_at).reverse.first
+  end
+
+  private
+
+  def time_create
+    if self.Published?
+      self.time = Time.zone.now
+    end
+  end
+
+  def time_update
+    if self.published_changed?(from: "Draft", to:"Published")
+      self.time = Time.zone.now
+    elsif self.published_changed?(from: "Published", to:"Draft")
+      self.time = nil
+    end
   end
 
 end
