@@ -19,7 +19,7 @@ class Post < ApplicationRecord
 
   enum published: { Draft: false, Published: true }
 
-  scope :default_order, -> { order('created_at desc') }
+  scope :default_order, -> { order('time desc') }
   scope :published, -> { where(published: true) }
   scope :drafts, -> { where(published: false) }
   scope :favorite, -> { where(favorite: true) }
